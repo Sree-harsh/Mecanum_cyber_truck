@@ -53,94 +53,258 @@ const char* htmlHomePage PROGMEM = R"HTMLHOMEPAGE(
 <!DOCTYPE html>
 <html>
   <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
     <style>
-    .arrows {
-      font-size:70px;
-      color:red;
-    }
-    .circularArrows {
-      font-size:80px;
-      color:blue;
-    }
-    td {
-      background-color:black;
-      border-radius:25%;
-      box-shadow: 5px 5px #888888;
-    }
-    td:active {
-      transform: translate(5px,5px);
-      box-shadow: none; 
-    }
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-    .noselect {
-      -webkit-touch-callout: none; /* iOS Safari */
-        -webkit-user-select: none; /* Safari */
-         -khtml-user-select: none; /* Konqueror HTML */
-           -moz-user-select: none; /* Firefox */
-            -ms-user-select: none; /* Internet Explorer/Edge */
-                user-select: none; /* Non-prefixed version, currently
-                                      supported by Chrome and Opera */
-    }
+      .nav {
+        list-style: none;
+        text-align: center;
+      }
+
+      .nav td {
+        position: relative;
+        display: inline-block;
+        margin-right: -4px;
+      }
+
+      .nav td:before {
+        content: "";
+        display: block;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #fff;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        z-index: -1;
+      }
+
+      .nav .a {
+        display: block;
+        text-decoration: none;
+        background-color: #f7f7f7;
+        background-image: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(#f7f7f7),
+          to(#e7e7e7)
+        );
+        background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
+        background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
+        background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7);
+        background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
+        color: #313030;
+        margin: 26px;
+        width: 64px;
+        height: 64px;
+        position: relative;
+        text-align: center;
+        line-height: 64px;
+        font-size: 30px;
+        border-radius: 50%;
+        box-shadow: 0px 3px 8px #aaa, inset 0px 2px 3px #fff;
+        border: solid 1px transparent;
+      }
+
+      .nav .a:before {
+        content: "";
+        display: block;
+        background: #fff;
+        border-top: 2px solid #ddd;
+        position: absolute;
+        top: -18px;
+        left: -18px;
+        bottom: -18px;
+        right: -18px;
+        z-index: -1;
+        border-radius: 50%;
+        box-shadow: inset 0px 8px 48px #ddd;
+      }
+
+      .nav .a:hover {
+        text-decoration: none;
+        color: #555;
+        background: #f5f5f5;
+      }
+      .noselect {
+        /* background-image: url("https://res.cloudinary.com/dtp5uqey3/image/upload/v1714779681/WhatsApp_Image_2024-05-03_at_08.09.52_hr8hpv.jpg");
+        background-position: center;
+        backdrop-filter: blur(10px); */
+        /* height: 110vh; */
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .end {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 15px;
+        width: 300px;
+        color: #555;
+      }
+      .nav .a.touched {
+        box-shadow: 0px 3px 4px #aaa inset, 0px 2px 3px #fff;
+      }
+      .icon-home {
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+      }
     </style>
   </head>
-  <body class="noselect" align="center" style="background-color:white">
-     
-    <h1 style="color: teal;text-align:center;">ELECTRIC VEHICLE TECHNOLOGY</h1>
-    <h2 style="color: teal;text-align:center;">CYBER &#128663; TRUCK</h2>
-    
-    <table id="mainTable" style="width:400px;margin:auto;table-layout:fixed" CELLSPACING=10>
-      <tr>
-        <td ontouchstart='onTouchStartAndEnd("5")' ontouchend='onTouchStartAndEnd("0")'><span class="arrows" >&#11017;</span></td>
-        <td ontouchstart='onTouchStartAndEnd("1")' ontouchend='onTouchStartAndEnd("0")'><span class="arrows" >&#8679;</span></td>
-        <td ontouchstart='onTouchStartAndEnd("6")' ontouchend='onTouchStartAndEnd("0")'><span class="arrows" >&#11016;</span></td>
+  <body class="noselect" align="center">
+    <h1 style="color: teal; text-align: center">ELECTRIC VEHICLE TECHNOLOGY</h1>
+    <h2 style="color: teal; text-align: center">TESLA &#128663; TRUCK</h2>
+
+    <table id="mainTable" cellspacing="10">
+      <tr class="nav">
+        <td
+          ontouchstart='onTouchStartAndEnd("5")'
+          ontouchend='onTouchStartAndEnd("0")'
+        >
+          <span class="a">
+            <span class="icon-home">&#11017;</span>
+          </span>
+        </td>
+        <td
+          ontouchstart='onTouchStartAndEnd("1")'
+          ontouchend='onTouchStartAndEnd("0")'
+        >
+          <span class="a">
+            <span class="icon-home">&#8679;</span>
+          </span>
+        </td>
+        <td
+          ontouchstart='onTouchStartAndEnd("6")'
+          ontouchend='onTouchStartAndEnd("0")'
+        >
+          <span class="a">
+            <span class="icon-home">&#11016;</span>
+          </span>
+        </td>
       </tr>
-      
-      <tr>
-        <td ontouchstart='onTouchStartAndEnd("3")' ontouchend='onTouchStartAndEnd("0")'><span class="arrows" >&#8678;</span></td>
-        <td></td>    
-        <td ontouchstart='onTouchStartAndEnd("4")' ontouchend='onTouchStartAndEnd("0")'><span class="arrows" >&#8680;</span></td>
+
+      <tr class="nav">
+        <td
+          ontouchstart='onTouchStartAndEnd("3")'
+          ontouchend='onTouchStartAndEnd("0")'
+        >
+          <span class="a">
+            <span class="icon-home">&#8678;</span>
+          </span>
+        </td>
+        <td>
+          <span class="a">
+            <span class="icon-home"></span>
+          </span>
+        </td>
+        <td
+          ontouchstart='onTouchStartAndEnd("4")'
+          ontouchend='onTouchStartAndEnd("0")'
+        >
+          <span class="a">
+            <span class="icon-home">&#8680;</span>
+          </span>
+        </td>
       </tr>
-      
-      <tr>
-        <td ontouchstart='onTouchStartAndEnd("7")' ontouchend='onTouchStartAndEnd("0")'><span class="arrows" >&#11019;</span></td>
-        <td ontouchstart='onTouchStartAndEnd("2")' ontouchend='onTouchStartAndEnd("0")'><span class="arrows" >&#8681;</span></td>
-        <td ontouchstart='onTouchStartAndEnd("8")' ontouchend='onTouchStartAndEnd("0")'><span class="arrows" >&#11018;</span></td>
+
+      <tr class="nav">
+        <td
+          ontouchstart='onTouchStartAndEnd("7")'
+          ontouchend='onTouchStartAndEnd("0")'
+        >
+          <span class="a">
+            <span class="icon-home">&#11019;</span>
+          </span>
+        </td>
+        <td
+          ontouchstart='onTouchStartAndEnd("2")'
+          ontouchend='onTouchStartAndEnd("0")'
+        >
+          <span class="a">
+            <span class="icon-home">&#8681;</span>
+          </span>
+        </td>
+        <td
+          ontouchstart='onTouchStartAndEnd("8")'
+          ontouchend='onTouchStartAndEnd("0")'
+        >
+          <span class="a">
+            <span class="icon-home">&#11018;</span>
+          </span>
+        </td>
       </tr>
-    
-      <tr>
-        <td ontouchstart='onTouchStartAndEnd("9")' ontouchend='onTouchStartAndEnd("0")'><span class="circularArrows" >&#8634;</span></td>
-        <td style="background-color:white;box-shadow:none"></td>
-        <td ontouchstart='onTouchStartAndEnd("10")' ontouchend='onTouchStartAndEnd("0")'><span class="circularArrows" >&#8635;</span></td>
+
+      <tr class="nav">
+        <td
+          ontouchstart='onTouchStartAndEnd("9")'
+          ontouchend='onTouchStartAndEnd("0")'
+        >
+          <span class="a">
+            <span class="icon-home">&#8634;</span>
+          </span>
+        </td>
+        <td style="background-color: white; box-shadow: none"></td>
+        <td
+          ontouchstart='onTouchStartAndEnd("10")'
+          ontouchend='onTouchStartAndEnd("0")'
+        >
+          <span class="a">
+            <span class="icon-home">&#8635;</span>
+          </span>
+        </td>
       </tr>
     </table>
-
+    <p class="end">Created with <span style="color: red;">&#10084;</span> by - <br> Sree, Kuladeep, Arpit, Sai Ram</p>
     <script>
       var webSocketUrl = "ws:\/\/" + window.location.hostname + "/ws";
       var websocket;
-      
-      function initWebSocket() 
-      {
+
+      function initWebSocket() {
         websocket = new WebSocket(webSocketUrl);
-        websocket.onopen    = function(event){};
-        websocket.onclose   = function(event){setTimeout(initWebSocket, 2000);};
-        websocket.onmessage = function(event){};
+        websocket.onopen = function (event) {};
+        websocket.onclose = function (event) {
+          setTimeout(initWebSocket, 2000);
+        };
+        websocket.onmessage = function (event) {};
       }
 
-      function onTouchStartAndEnd(value) 
-      {
+      function onTouchStartAndEnd(value) {
+        var links = document.getElementsByClassName("a");
+        for (var i = 0; i < links.length; i++) {
+          links[i].classList.remove("touched");
+        }
+        var link = event.target.closest(".a");
+        link.classList.add("touched");
         websocket.send(value);
       }
-          
-      window.onload = initWebSocket;
-      document.getElementById("mainTable").addEventListener("touchend", function(event){
-        event.preventDefault()
-      });      
-    </script>
-    
-  </body>
-</html> 
 
+      window.onload = initWebSocket;
+      document
+        .getElementById("mainTable")
+        .addEventListener("touchend", function (event) {
+          event.preventDefault();
+        });
+    </script>
+  </body>
+</html>
 )HTMLHOMEPAGE";
 
 
