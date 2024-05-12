@@ -42,9 +42,9 @@ smoothly in any direction with minimal effort.
 
 <p float="left">
   <img src="https://github.com/Sree-harsh/Mecanum_cyber_truck/assets/98598677/1de701c8-329d-4f40-9bff-b5cb770ef579" height="210" width="210" />
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://github.com/Sree-harsh/Mecanum_cyber_truck/assets/98598677/5b519ad5-1c64-4a30-b8c6-d11fc44cc54c" height="210" width="210" />
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://github.com/Sree-harsh/Mecanum_cyber_truck/assets/98598677/e2407ff3-cf97-4388-b4dc-1b09531809e3" height="210" width="210" />
 </p>
 
