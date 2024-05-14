@@ -1,4 +1,9 @@
 # MechanoTesla - The Desi Cybertruck 
+<p align="center">
+<img width="900" alt="1" src="https://github.com/Sree-harsh/Mecanum_cyber_truck/assets/98598677/d091c3e0-39a7-475d-94e3-9180d2394894">
+
+</p>
+
 
 ## Table of Contents
 - [Introduction](#introduction)
